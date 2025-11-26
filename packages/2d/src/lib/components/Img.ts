@@ -154,8 +154,8 @@ export class Img extends Rect {
     let key = '';
     if (rawSrc) {
       key = viaProxy(rawSrc);
-      const url = new URL(key, window.location.origin);
-      if (url.origin === window.location.origin) {
+      const url = new URL(key, window.origin);
+      if (url.origin === window.origin) {
         const hash = this.view().assetHash();
         url.searchParams.set('asset-hash', hash);
       }
